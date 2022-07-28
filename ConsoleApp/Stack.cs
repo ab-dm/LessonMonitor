@@ -1,13 +1,20 @@
-﻿namespace ConsoleApp
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp
 {
-    public class MyListImplementation
+    public class Stack
     {
         private Box _head;
         private Box _tail;
         private Box _current;
         private int _count;
 
-        public MyListImplementation()
+
+        public Stack()
         {
             _head = null;
             _tail = null;
@@ -39,10 +46,10 @@
 
             _current = _current.Next;
 
-            return _current != null;
+            return _current.Next != null;
         }
 
-        public void Add(int value)
+        public void Push(int value)
         {
             Box box = new Box(value);
 
@@ -54,18 +61,28 @@
             }
             else
             {
-                _tail.Next = box;
+                var tempBox = _tail;
                 _tail = box;
+                _tail.Next = tempBox;
             }
 
             _count++;
         }
 
-        public void Remuve(int value)
+        public int Pull()
         {
-            _count--;
-        }
+            if (_tail == null)
+            {
+                return 0;
+            }
 
+            int value = _tail.Value;
+            _tail = _tail.Next;
+            _count--;
+
+            return value;
+        }
+        
         private class Box
         {
             public Box(int value)

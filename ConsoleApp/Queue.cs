@@ -1,13 +1,14 @@
 ﻿namespace ConsoleApp
 {
-    public class MyListImplementation
+    public class Queue
     {
         private Box _head;
         private Box _tail;
         private Box _current;
         private int _count;
 
-        public MyListImplementation()
+
+        public Queue()
         {
             _head = null;
             _tail = null;
@@ -39,10 +40,19 @@
 
             _current = _current.Next;
 
-            return _current != null;
+            return _current.Next != null;
         }
 
-        public void Add(int value)
+        public int Dequeue()
+        {
+            int value = _head.Value;
+            _head = _head.Next;
+            _current = _head;
+            _count--;
+
+            return value;
+        }
+        public void Enqueue(int value)
         {
             Box box = new Box(value);
 
@@ -59,11 +69,6 @@
             }
 
             _count++;
-        }
-
-        public void Remuve(int value)
-        {
-            _count--;
         }
 
         private class Box
