@@ -75,6 +75,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            IList<int> values = new int[10];
             var issues = new[]
             {
                 new Issue
