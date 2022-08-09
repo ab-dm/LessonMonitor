@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonMonitor.API", "Lesson
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{E2D6AEE8-7E44-4F8F-80E7-C5B7BE6E1A5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{38FC7BE1-F140-4D28-A689-354010067A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{38FC7BE1-F140-4D28-A689-354010067A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{81F2466F-B464-4C22-BE35-9ABCC5BA94FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{81F2466F-B464-4C22-BE35-9ABCC5BA94FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{1604B721-B052-4D7D-99FF-6675567B665D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{81F2466F-B464-4C22-BE35-9ABCC5BA94FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81F2466F-B464-4C22-BE35-9ABCC5BA94FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81F2466F-B464-4C22-BE35-9ABCC5BA94FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1604B721-B052-4D7D-99FF-6675567B665D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1604B721-B052-4D7D-99FF-6675567B665D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1604B721-B052-4D7D-99FF-6675567B665D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1604B721-B052-4D7D-99FF-6675567B665D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

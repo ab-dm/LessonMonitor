@@ -13,7 +13,7 @@ namespace Server
         /// https://github.com/Z1pP/CsharpForBeginners/tree/master/Shop
         /// 
         /// Fork одного из проектов.
-        /// 
+        /// TimeCode => 2:06:34
         /// Добавить магазин, добавить работу через клиент сервер.   
         /// </summary>
         /// <param name="args"></param>
