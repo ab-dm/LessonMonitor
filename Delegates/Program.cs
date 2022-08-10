@@ -1,6 +1,7 @@
 ﻿namespace Delegates
 {
-    delegate void Notify(string messege);
+    internal delegate void Notify(string messege);
+    internal delegate void Action(string messege, int number);
 
     public partial class Program
     {
@@ -8,8 +9,36 @@
 
         static void Main(string[] args)
         {
+            Notify notifyError = delegate (string messege)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(messege);
+                Console.ResetColor();
+            };
+
+            Action action = delegate (string a, int b)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine(a + b);
+                Console.ResetColor();
+            };
+
+            action("Number: ", 10);
+
+            notifyError("TestDelegates error message");
+            TestDelegatUsage();
+        }
+
+        private static void TestDelegatUsage()
+        {
             Notify notify = PrintErrorMessege;
             notify += PrintFileMessege;
+            notify += delegate (string messege)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(messege);
+                Console.ResetColor();
+            };
 
             var cart = new Cart(notify);
             cart.Add("Cheese");
