@@ -2,24 +2,30 @@
 {
     public partial class Program
     {
-        internal class Cart
+        internal class ProductsCart
         {
-            private List<string> _products;
+            private List<Product> _products;
             private Notify _notify;
 
-            public Cart(Notify notify) : this()
+            public ProductsCart(Notify notify) : this()
             {
                 _notify = notify;
             }
 
-            public Cart()
+            public ProductsCart()
             {
-                _products = new List<string>();
+                _products = new List<Product>();
             }
 
-            public void Add(string? newProduct)
+            public void Add(Product newProduct)
             {
-                if (string.IsNullOrWhiteSpace(newProduct))
+                if (newProduct == null)
+                {
+                    _notify?.Invoke("product cannot be null!");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(newProduct.Name))
                 {
                     _notify?.Invoke("product cannot be null or whitespase!");
                     return;
@@ -34,7 +40,7 @@
                 _products.Add(newProduct);
             }
 
-            internal string? Find(Checker checker)
+            internal Product? Find(ProductChecker checker)
             {
                 foreach (var product in _products)
                 {
@@ -43,15 +49,15 @@
                         return product;
                     }
                 }
-                
+
                 return null;
             }
 
-            private bool IsProductExists(string newProduct)
+            private bool IsProductExists(Product newProduct)
             {
                 foreach (var product in _products)
                 {
-                    if (newProduct == product)
+                    if (newProduct.Name == product.Name)
                     {
                         return true;
                     }
